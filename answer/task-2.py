@@ -47,8 +47,8 @@ def roc_curve_manual(labels, probs):
     for th in thresholds:
         tp, tn, fp, fn = confusion_matrix_from_threshold(labels, probs, th)
 
-        tpr = tp / (tp + fn) if (tp + fn) > 0 else 0.0
-        fpr = fp / (fp + tn) if (fp + tn) > 0 else 0.0
+        tpr = tp / (tp + fn) # recall
+        fpr = fp / (tn + fp) # specificity
 
         tpr_list.append(tpr)
         fpr_list.append(fpr)
