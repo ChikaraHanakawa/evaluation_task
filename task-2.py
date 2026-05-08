@@ -30,6 +30,7 @@ def confusion_matrix_from_threshold(labels, probs, threshold):
 
     return tp, tn, fp, fn
 
+# AUCを求める関数
 def auc_trapezoid(fpr, tpr):
     auc = 0.0
     for i in range(1, len(fpr)):
@@ -38,6 +39,7 @@ def auc_trapezoid(fpr, tpr):
         auc += dx * y
     return auc
 
+# ROC曲線を求める関数
 def roc_curve_manual(labels, probs):
     thresholds = sorted(set(probs), reverse=True)
 
@@ -47,8 +49,8 @@ def roc_curve_manual(labels, probs):
     for th in thresholds:
         tp, tn, fp, fn = confusion_matrix_from_threshold(labels, probs, th)
 
-        tpr = tp / (tp + fn) # Recall
-        fpr = fp / (tn + fp) # FPR
+        tpr = # Recall
+        fpr = # FPR
 
         tpr_list.append(tpr)
         fpr_list.append(fpr)
