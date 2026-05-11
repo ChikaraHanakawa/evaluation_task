@@ -1,2 +1,7 @@
 # evaluation_task
 藤江研究室の学生ゼミで使用するスクリプト
+
+## uv
+```
+uv sync
+```
