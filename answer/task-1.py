@@ -30,7 +30,7 @@ def confusion_matrix(input_csv):
     return tp, tn, fp, fn
 
 def calc_acc(tp, tn, fp, fn):
-    numerator = tp + fp
+    numerator = tp + tn
     dominator = tp + tn + fp + fn
     accuracy = numerator / dominator
     return accuracy
@@ -41,9 +41,9 @@ def calc_prec(tp, fp):
     precision = numerator / dominator
     return precision
 
-def calc_reca(tp, tn):
+def calc_reca(tp, fn):
     numerator = tp
-    dominator = tp + tn
+    dominator = tp + fn
     recall = numerator / dominator
     return recall
 
@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     accuracy  = calc_acc(tp, tn, fp, fn)
     precision = calc_prec(tp, fp)
-    recall    = calc_reca(tp, tn)
+    recall    = calc_reca(tp, fn)
     f1        = calc_f1(precision, recall)
 
     print(f"Accuracy  : {accuracy:.4f}")

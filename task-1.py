@@ -41,7 +41,7 @@ def calc_prec(tp, fp):
     precision = numerator / dominator
     return precision
 
-def calc_reca(tp, tn):
+def calc_reca(tp, fn):
     numerator = # 分子
     dominator = # 分母
     recall = numerator / dominator
@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
     accuracy  = calc_acc(tp, tn, fp, fn)
     precision = calc_prec(tp, fp)
-    recall    = calc_reca(tp, tn)
+    recall    = calc_reca(tp, fn)
     f1        = calc_f1(precision, recall)
 
     print(f"Accuracy  : {accuracy:.4f}")
